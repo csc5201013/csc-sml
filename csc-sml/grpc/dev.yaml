@@ -1,0 +1,13 @@
+Mysql:
+  User: "root"
+  Password: "chenshicheng"
+  Host: "124.223.211.250"
+  Post: 3306
+  Database: "2212a_csc"
+
+Nacos:
+  ServerAddr: "124.223.211.250"  # Nacos服务器IP地址
+  Namespace: "77c9da26-98e6-4aac-9468-5a0e93d0362d"  # 正确的命名空间UUID
+  Port: 8848                     # Nacos默认端口
+  DataId: "user-srv-json"
+  Group: "DEFAULT_GROUP"

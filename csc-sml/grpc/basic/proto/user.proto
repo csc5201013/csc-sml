@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package stream;
+
+option go_package = "/";
+
+//注册
+
+message RegisterReq {
+  string name = 3;
+  string mobile = 1;
+  string password = 2;
+
+}
+
+message RegisterResp {
+  int64 code = 1;
+  string msg = 2;
+}
+
+//列表/查询接口排序，按时间倒序
+message UserListReq {
+
+}
+
+message UserListResp {
+  repeated UserList list = 1;
+
+}
+message UserList{
+  int64 id = 1;
+  string name = 2;
+  string mobile = 3;
+  int64 status = 4;
+  string create_time = 5;
+  string update_time = 6;
+}
+
+service User {
+  rpc Register(RegisterReq) returns (RegisterResp);//注册
+  rpc UserList(UserListReq) returns (UserListResp);//列表/查询接口排序，按时间倒序
+
+}
